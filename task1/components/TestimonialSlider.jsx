@@ -90,7 +90,7 @@ const TestimonialSlider = () => {
       <Slider {...settings} ref={(c) => sliderRef}>
         {testimonials.map((testimonial) => (
           <div key={testimonial.id} className="px-4">
-            <div className="p-6 bg-white rounded-xl shadow-lg border hover:shadow-2xl transition">
+            <div className="p-6 bg-white rounded-xl shadow-lg border hover:shadow-2xl transition mb-5">
               <div className="flex items-center space-x-4">
                 <img
                   src={testimonial.image}

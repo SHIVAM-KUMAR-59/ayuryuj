@@ -11,6 +11,7 @@ import Tracker from '@/components/TrackerSlider'
 import TrackerBanner from '@/components/TrackerBanner'
 import TrackerCard from '@/components/TrackerCard'
 import TestimonialSlider from '@/components/TestimonialSlider'
+import TopHostpitals from '@/components/TopHostpitals'
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       <TrackerBanner />
       <Tracker />
       <TestimonialSlider />
+      <TopHostpitals />
     </>
   )
 }
