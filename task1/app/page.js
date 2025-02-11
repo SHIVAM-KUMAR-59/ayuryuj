@@ -13,6 +13,7 @@ import TrackerCard from '@/components/TrackerCard'
 import TestimonialSlider from '@/components/TestimonialSlider'
 import TopHostpitals from '@/components/TopHostpitals'
 import Categories from '@/components/Categories'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       <TestimonialSlider />
       <TopHostpitals />
       <Categories />
+      <Footer />
     </>
   )
 }
