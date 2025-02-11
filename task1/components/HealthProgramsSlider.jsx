@@ -59,8 +59,14 @@ const programs = [
     duration: '3 Months',
     price: '4499',
     features: [
-      { icon: <FaInfinity />, text: 'Unlimited calls with General Physician' },
-      { icon: <FaVial />, text: 'Annual Health Screening at Home' },
+      {
+        icon: <FaInfinity />,
+        text: 'Regular meal planning & live wellness sessions',
+      },
+      {
+        icon: <FaVial />,
+        text: '2 at-home full body checks(70 + tests covered)',
+      },
     ],
   },
   {
@@ -71,8 +77,68 @@ const programs = [
     duration: '3 Months',
     price: '5499',
     features: [
-      { icon: <FaInfinity />, text: 'Unlimited calls with General Physician' },
-      { icon: <FaVial />, text: 'Annual Health Screening at Home' },
+      {
+        icon: <FaInfinity />,
+        text: 'Regular consultaions with top endocrinologists & dietitians',
+      },
+      {
+        icon: <FaVial />,
+        text: 'Weekly follow-up with a dedicated care manager',
+      },
+    ],
+  },
+  {
+    id: 6,
+    image: '/Mental_Wellness.webp',
+    title: 'Mental Wellness Program',
+    specialists: '',
+    duration: '2 Months',
+    price: '3999',
+    features: [
+      {
+        icon: <FaInfinity />,
+        text: '5 therapy sessions with a psychologist; 1 hr each',
+      },
+      {
+        icon: <FaVial />,
+        text: 'Worksheets designed by doctors to aid personal growth',
+      },
+    ],
+  },
+  {
+    id: 8,
+    image: '/Pregnancy_Care.webp',
+    title: 'Pregnancy Care Program',
+    specialists: '',
+    duration: '3 Months',
+    price: '8499',
+    features: [
+      {
+        icon: <FaInfinity />,
+        text: 'Genetic counselling in the second trimester',
+      },
+      {
+        icon: <FaVial />,
+        text: 'Lactation assistance during the third trimester & after child birth',
+      },
+    ],
+  },
+  {
+    id: 7,
+    image: '/PCOS.webp',
+    title: 'PCOS Care Program',
+    specialists: '',
+    duration: '3 Months',
+    price: '5499',
+    features: [
+      {
+        icon: <FaInfinity />,
+        text: 'Regular diet planning with an expert dietitian',
+      },
+      {
+        icon: <FaVial />,
+        text: 'Weekly follow-up with a dedicated care manager',
+      },
     ],
   },
 ]
