@@ -137,9 +137,9 @@ const Consult = () => {
           </div>
 
           {/* Tab Buttons */}
-          <div className="absolute -bottom-5 left-10 flex w-full bg-white rounded-xl">
+          <div className="absolute -bottom-5 left-1/2 lg:translate-x-0 lg:left-5 transform -translate-x-1/2 flex w-[90%] sm:w-auto bg-white rounded-xl shadow-md">
             <button
-              className={`px-5 py-2 rounded-l-xl shadow-md font-semibold transition-all duration-300 ${
+              className={`px-5 py-2 w-1/2 sm:w-auto rounded-l-xl shadow-md font-semibold transition-all duration-300 ${
                 selectedTab === 'symptoms'
                   ? 'bg-cyan-700 text-white'
                   : 'text-blue-600 border border-blue-600'
@@ -149,7 +149,7 @@ const Consult = () => {
               Symptoms
             </button>
             <button
-              className={`px-5 py-2 rounded-r-xl shadow-md font-semibold transition-all duration-300 ${
+              className={`px-5 py-2 w-1/2 sm:w-auto rounded-r-xl shadow-md font-semibold transition-all duration-300 ${
                 selectedTab === 'specialities'
                   ? 'bg-cyan-700 text-white'
                   : 'text-blue-600 border border-blue-600'
@@ -171,14 +171,14 @@ const Consult = () => {
           />
         </div>
       </section>
-      <div className="w-[85%] mx-auto">
+      <div className="w-[85%] mx-auto my-4 lg:my-12">
         <div className="text-blue-900 font-medium mt-8">
           <div className="flex sm:flex-wrap gap-5 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth scroll-snap-x">
             {selectedTab === 'symptoms'
               ? symptoms.map((box) => <Box name={box.name} key={box.id} />)
               : specialities.map((box) => <Box name={box.name} key={box.id} />)}
           </div>
-          <div className="flex justify-end w-full">
+          <div className="flex justify-end w-full mt-5 lg:mt-0">
             <ViewAllButton />
           </div>
         </div>

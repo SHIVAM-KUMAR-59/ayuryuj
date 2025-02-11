@@ -15,6 +15,7 @@ import TopHostpitals from '@/components/TopHostpitals'
 import Categories from '@/components/Categories'
 import Footer from '@/components/Footer'
 import Consult from '@/components/Consult'
+import LabTests from '@/components/LabTests'
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <Services />
       <ChangingBackground />
       <Creams />
+      <LabTests />
       <Consult />
       <Book />
       <Join />
