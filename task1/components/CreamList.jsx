@@ -54,12 +54,12 @@ const products = [
 
 const ProductList = () => {
   return (
-    <div className="w-[90%] lg:w-[80%] mx-auto border-2 border-black">
-      <div className="flex gap-4 overflow-x-auto no-scrollbar p-4 scroll-smooth scroll-snap-x">
+    <div className="w-[90%] lg:w-[80%] mx-auto ">
+      <div className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory p-4 scroll-smooth scroll-snap-x">
         {products.map((product) => (
           <div
             key={product.id}
-            className="rounded-lg flex flex-col text-left min-w-[150px] lg:w-[200px] text-xs bg-white shadow-md scroll-snap-align-start"
+            className="rounded-lg flex flex-col text-left min-w-[150px] lg:w-[200px] hover:scale-105 hover:shadow-md transition-all duration-300 text-xs bg-white shadow-sm scroll-snap-align-start"
           >
             <Image
               src={product.img}
@@ -80,6 +80,11 @@ const ProductList = () => {
             </p>
           </div>
         ))}
+      </div>
+      <div className="w-full flex justify-end px-4">
+        <button className="w-full lg:w-auto bg-white lg:bg-blue-500 p-2 rounded-lg text-blue-500 border border-blue-500 lg:text-white font-bold cursor-pointer">
+          View All
+        </button>
       </div>
     </div>
   )
