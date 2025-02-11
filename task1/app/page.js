@@ -1,6 +1,4 @@
-import AssessmentCard from '@/components/AssessmentCard'
 import AssessmentSlider from '@/components/AssessmentSlider'
-import Banner from '@/components/Banner'
 import Book from '@/components/Book'
 import ChangingBackground from '@/components/ChangingBackground'
 import Creams from '@/components/Creams'
@@ -9,6 +7,9 @@ import Join from '@/components/Join'
 import Navbar from '@/components/Navbar'
 import SelfCheck from '@/components/SelfCheck'
 import Services from '@/components/Services'
+import Tracker from '@/components/TrackerSlider'
+import TrackerBanner from '@/components/TrackerBanner'
+import TrackerCard from '@/components/TrackerCard'
 
 export default function Home() {
   return (
@@ -22,6 +23,8 @@ export default function Home() {
       <HealthProgramsSlider />
       <SelfCheck />
       <AssessmentSlider />
+      <TrackerBanner />
+      <Tracker />
     </>
   )
 }
