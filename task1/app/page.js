@@ -10,6 +10,7 @@ import Services from '@/components/Services'
 import Tracker from '@/components/TrackerSlider'
 import TrackerBanner from '@/components/TrackerBanner'
 import TrackerCard from '@/components/TrackerCard'
+import TestimonialSlider from '@/components/TestimonialSlider'
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <AssessmentSlider />
       <TrackerBanner />
       <Tracker />
+      <TestimonialSlider />
     </>
   )
 }

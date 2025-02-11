@@ -17,9 +17,39 @@ const tracker = [
   },
   {
     id: 2,
-    title: 'Understanding Human Metapneumovirus',
+    title:
+      'Understanding Human Metapneumovirus(HMPV): The Respiratory Virus Raising...',
     description: null,
     image: '/health2.jpeg',
+  },
+  {
+    id: 3,
+    title: 'How to Book Your Health Checkup Online with MFine',
+    description: null,
+    image: '/health3.webp',
+  },
+  {
+    id: 4,
+    title:
+      'The Complete Guide on Pigmentation in Indian skin: Causes, Diagnosis,...',
+    description:
+      'Read a complete guide on pigmentation in Indian skin. Know all about hyperpigmentation, hypopigmentation, causes, diagnosis, treatment &....',
+    image: '/health4.jpg',
+  },
+  {
+    id: 5,
+    title:
+      'Shocking Truth Revealed: Learn the Difference Between Acne and Pimples!',
+    description:
+      'Were you also under the impression that both acne and pimple are the same? Well, you are not alone. Many feel that acne and pimple are same. In....',
+    image: '/health5.jpg',
+  },
+  {
+    id: 6,
+    title: 'Prevent, Treat, Glow: Managing Skin Issues in Indian Women',
+    description:
+      'In this guide, we will see the common types of skin problems in Indian Women with pictures, their symptoms, causes, risk factors, treatment and....',
+    image: '/health6.jpg',
   },
 ]
 
