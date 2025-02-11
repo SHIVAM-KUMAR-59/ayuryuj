@@ -3,7 +3,9 @@ import Book from '@/components/Book'
 import ChangingBackground from '@/components/ChangingBackground'
 import Creams from '@/components/Creams'
 import HealthProgramsSlider from '@/components/HealthProgramsSlider'
+import Join from '@/components/Join'
 import Navbar from '@/components/Navbar'
+import SelfCheck from '@/components/SelfCheck'
 import Services from '@/components/Services'
 
 export default function Home() {
@@ -13,9 +15,10 @@ export default function Home() {
       <Services />
       <ChangingBackground />
       <Creams />
-      <HealthProgramsSlider />
       <Book />
-      <Banner />
+      <Join />
+      <HealthProgramsSlider />
+      <SelfCheck />
     </>
   )
 }

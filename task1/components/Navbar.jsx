@@ -25,7 +25,7 @@ const Navbar = () => {
             </li>
           ))}
           <li className="flex gap-3 ml-3">
-            <button className="px-4 py-2 border rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-300 bg-gradient-to-t from-orange-400 to-red-200 cursor-pointer text-md font-bold text-white">
+            <button className="px-4 py-2 border rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-300 bg-gradient-to-t from-red-400 to-orange-300 cursor-pointer text-md font-bold text-white">
               Get Our App
             </button>
             <button className="px-4 py-2 border-2 border-orange-400 rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-orange-500 text-md font-bold">

@@ -11,10 +11,12 @@ import {
   FaChevronLeft,
   FaChevronRight,
 } from 'react-icons/fa'
+import Image from 'next/image'
 
 const programs = [
   {
     id: 1,
+    image: '/diabetes.webp',
     title: 'Diabetes Care Program',
     specialists: 'Diabetologists & Dietitians',
     duration: '3 Months',
@@ -23,10 +25,10 @@ const programs = [
       { icon: <FaInfinity />, text: 'Unlimited Consultations' },
       { icon: <FaVial />, text: '2 At-Home Blood Tests' },
     ],
-    image: '/diabetes.png',
   },
   {
     id: 2,
+    image: '/sexual_wellness.webp',
     title: 'Sexual Wellness Program - Male',
     specialists: 'Sexologists & Therapists',
     duration: '6 Weeks',
@@ -35,11 +37,11 @@ const programs = [
       { icon: <FaInfinity />, text: 'Expert Consultations' },
       { icon: <FaVial />, text: 'Clinically proven results' },
     ],
-    image: '/sexual-wellness.png',
     isNew: true,
   },
   {
     id: 3,
+    image: '/elder_care_program.webp',
     title: 'Elder Care Program',
     specialists: 'Physician, Dieticians & Mental Health Professionals',
     duration: '12 Months',
@@ -48,7 +50,30 @@ const programs = [
       { icon: <FaInfinity />, text: 'Unlimited calls with General Physician' },
       { icon: <FaVial />, text: 'Annual Health Screening at Home' },
     ],
-    image: '/elder-care.png',
+  },
+  {
+    id: 4,
+    image: '/weight_management.webp',
+    title: 'Weight Management Program',
+    specialists: '',
+    duration: '3 Months',
+    price: '4499',
+    features: [
+      { icon: <FaInfinity />, text: 'Unlimited calls with General Physician' },
+      { icon: <FaVial />, text: 'Annual Health Screening at Home' },
+    ],
+  },
+  {
+    id: 5,
+    image: '/Thyroid_Care.webp',
+    title: 'Thyroid Care Program',
+    specialists: '',
+    duration: '3 Months',
+    price: '5499',
+    features: [
+      { icon: <FaInfinity />, text: 'Unlimited calls with General Physician' },
+      { icon: <FaVial />, text: 'Annual Health Screening at Home' },
+    ],
   },
 ]
 
@@ -70,36 +95,54 @@ const HealthProgramsSlider = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 relative">
+    <div className="max-w-7xl mx-auto px-4 py-8 relative ">
       <Slider ref={sliderRef} {...settings}>
         {programs.map((program) => (
-          <div key={program.id} className="px-2">
-            <div className="bg-white shadow-md rounded-lg p-4">
-              <img
-                src={program.image}
-                alt={program.title}
-                className="w-full h-40 object-cover rounded-md"
-              />
-              <h3 className="font-semibold text-lg mt-3">{program.title}</h3>
-              <p className="text-gray-600">{program.specialists}</p>
-              <div className="flex items-center mt-2 space-x-2">
-                <FaCalendarAlt className="text-blue-500" />
-                <span className="text-sm font-medium">{program.duration}</span>
-                <FaRupeeSign className="text-green-500" />
-                <span className="text-sm font-medium">{program.price}</span>
+          <div key={program.id} className="px-2 h-full mb-2">
+            <div className="bg-white border rounded-lg p-4 h-full flex flex-col">
+              <div className="relative w-full h-48">
+                <Image
+                  src={program.image}
+                  alt={program.title}
+                  fill
+                  className="rounded-md object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority
+                />
               </div>
-              <button className="bg-orange-500 text-white w-full py-2 mt-3 rounded-lg hover:bg-orange-600">
-                Request a call back
-              </button>
-              <div className="mt-4 space-y-2">
-                {program.features.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center space-x-2 text-sm text-gray-700"
-                  >
-                    {feature.icon} <span>{feature.text}</span>
-                  </div>
-                ))}
+              <div className="flex flex-col flex-grow">
+                <h3 className="font-semibold text-lg mt-3 line-clamp-2">
+                  {program.title}
+                </h3>
+                <p className="text-gray-600 line-clamp-2 text-sm">
+                  {program.specialists}
+                </p>
+                <div className="flex items-center mt-2 space-x-6">
+                  <span className="text-xs font-medium text-red-500 flex items-center gap-1">
+                    <FaCalendarAlt className="text-blue-500 flex-shrink-0" />
+                    {program.duration}
+                  </span>
+
+                  <span className="text-xs font-medium flex items-center text-white bg-blue-500 rounded-lg p-1">
+                    <FaRupeeSign className=" flex-shrink-0" />
+                    {program.price}
+                  </span>
+                  <button className="bg-gradient-to-t from-red-400 to-orange-300 text-white p-2 rounded-lg hover:bg-orange-600 transition-colors">
+                    Request a call back
+                  </button>
+                </div>
+                <p className="text-xs text-slate-500 mt-4">Our plan entails:</p>
+                <div className="mt-4 flex gap-2">
+                  {program.features.map((feature, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center space-x-4 text-gray-500"
+                    >
+                      <span>{feature.icon}</span>
+                      <span>{feature.text}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -111,7 +154,7 @@ const HealthProgramsSlider = () => {
         {/* Progress Bar */}
         <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
           <div
-            className="h-full bg-blue-500"
+            className="h-full bg-blue-500 transition-all duration-300"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
@@ -119,19 +162,19 @@ const HealthProgramsSlider = () => {
         {/* Navigation Buttons */}
         <button
           onClick={() => sliderRef.current.slickPrev()}
-          className="p-2 bg-gray-300 rounded-full hover:bg-gray-400"
+          className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 transition-colors"
         >
           <FaChevronLeft />
         </button>
         <button
           onClick={() => sliderRef.current.slickNext()}
-          className="p-2 bg-gray-300 rounded-full hover:bg-gray-400"
+          className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 transition-colors"
         >
           <FaChevronRight />
         </button>
 
         {/* View All Button */}
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
           View All
         </button>
       </div>

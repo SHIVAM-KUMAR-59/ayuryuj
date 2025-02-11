@@ -40,8 +40,8 @@ const Book = () => {
     },
   ]
   return (
-    <div className="flex gap-5 flex-col justify-center items-center">
-      <Banner src="/book.png" />
+    <div className="flex gap-5 flex-col justify-center items-center mt-5">
+      <Banner image={'/book.png'} />
       <div className="flex sm:flex-wrap gap-5 w-[85%] mx-auto overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth scroll-snap-x">
         {boxes.map((box) => (
           <Box name={box.name} key={box.id} />
