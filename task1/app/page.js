@@ -14,6 +14,7 @@ import TestimonialSlider from '@/components/TestimonialSlider'
 import TopHostpitals from '@/components/TopHostpitals'
 import Categories from '@/components/Categories'
 import Footer from '@/components/Footer'
+import Consult from '@/components/Consult'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Services />
       <ChangingBackground />
       <Creams />
+      <Consult />
       <Book />
       <Join />
       <HealthProgramsSlider />
