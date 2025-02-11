@@ -1,3 +1,5 @@
+import Banner from '@/components/Banner'
+import Book from '@/components/Book'
 import ChangingBackground from '@/components/ChangingBackground'
 import Creams from '@/components/Creams'
 import HealthProgramsSlider from '@/components/HealthProgramsSlider'
@@ -12,6 +14,8 @@ export default function Home() {
       <ChangingBackground />
       <Creams />
       <HealthProgramsSlider />
+      <Book />
+      <Banner />
     </>
   )
 }

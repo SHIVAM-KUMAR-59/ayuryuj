@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import ViewAllButton from './ViewAllButton'
 
 const products = [
   {
@@ -82,9 +83,7 @@ const ProductList = () => {
         ))}
       </div>
       <div className="w-full flex justify-end px-4">
-        <button className="w-full lg:w-auto bg-white lg:bg-blue-500 p-2 rounded-lg text-blue-500 border border-blue-500 lg:text-white font-bold cursor-pointer">
-          View All
-        </button>
+        <ViewAllButton />
       </div>
     </div>
   )
