@@ -25,9 +25,9 @@ const TopHospitals = () => {
     slidesToScroll: 1,
     pauseOnHover: false,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 4 } }, // Medium screens: 3
-      { breakpoint: 768, settings: { slidesToShow: 3 } }, // Small screens: 2
-      { breakpoint: 480, settings: { slidesToShow: 2 } }, // Extra small screens: 1
+      { breakpoint: 1024, settings: { slidesToShow: 4 } },
+      { breakpoint: 768, settings: { slidesToShow: 3 } },
+      { breakpoint: 480, settings: { slidesToShow: 2 } },
     ],
   }
 
