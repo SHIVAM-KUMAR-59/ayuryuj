@@ -1,3 +1,5 @@
+import AssessmentCard from '@/components/AssessmentCard'
+import AssessmentSlider from '@/components/AssessmentSlider'
 import Banner from '@/components/Banner'
 import Book from '@/components/Book'
 import ChangingBackground from '@/components/ChangingBackground'
@@ -19,6 +21,7 @@ export default function Home() {
       <Join />
       <HealthProgramsSlider />
       <SelfCheck />
+      <AssessmentSlider />
     </>
   )
 }

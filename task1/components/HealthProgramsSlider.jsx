@@ -4,14 +4,14 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import {
-  FaCalendarAlt,
-  FaRupeeSign,
   FaInfinity,
   FaVial,
   FaChevronLeft,
   FaChevronRight,
 } from 'react-icons/fa'
-import Image from 'next/image'
+
+import HealthCard from './HealthCard'
+import ViewAllButton from './ViewAllButton'
 
 const programs = [
   {
@@ -164,83 +164,32 @@ const HealthProgramsSlider = () => {
     <div className="max-w-7xl mx-auto px-4 py-8 relative ">
       <Slider ref={sliderRef} {...settings}>
         {programs.map((program) => (
-          <div key={program.id} className="px-2 h-full mb-2">
-            <div className="bg-white border rounded-lg p-4 h-full flex flex-col">
-              <div className="relative w-full h-48">
-                <Image
-                  src={program.image}
-                  alt={program.title}
-                  fill
-                  className="rounded-md object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  priority
-                />
-              </div>
-              <div className="flex flex-col flex-grow">
-                <h3 className="font-semibold text-lg mt-3 line-clamp-2">
-                  {program.title}
-                </h3>
-                <p className="text-gray-600 line-clamp-2 text-sm">
-                  {program.specialists}
-                </p>
-                <div className="flex items-center mt-2 space-x-6">
-                  <span className="text-xs font-medium text-red-500 flex items-center gap-1">
-                    <FaCalendarAlt className="text-blue-500 flex-shrink-0" />
-                    {program.duration}
-                  </span>
-
-                  <span className="text-xs font-medium flex items-center text-white bg-blue-500 rounded-lg p-1">
-                    <FaRupeeSign className=" flex-shrink-0" />
-                    {program.price}
-                  </span>
-                  <button className="bg-gradient-to-t from-red-400 to-orange-300 text-white p-2 rounded-lg hover:bg-orange-600 transition-colors">
-                    Request a call back
-                  </button>
-                </div>
-                <p className="text-xs text-slate-500 mt-4">Our plan entails:</p>
-                <div className="mt-4 flex gap-2">
-                  {program.features.map((feature, index) => (
-                    <div
-                      key={index}
-                      className="flex items-center space-x-4 text-gray-500"
-                    >
-                      <span>{feature.icon}</span>
-                      <span>{feature.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+          <HealthCard program={program} key={program.id} />
         ))}
       </Slider>
 
-      {/* Bottom Right Controls */}
-      <div className="flex items-center justify-end space-x-4 mt-4">
-        {/* Progress Bar */}
-        <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
+      <div className="items-center justify-end space-x-4  -mt-16 lg:mt-0 flex gap-3">
+        <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden hidden lg:block">
           <div
             className="h-full bg-blue-500 transition-all duration-300"
             style={{ width: `${progress}%` }}
           ></div>
         </div>
 
-        {/* Navigation Buttons */}
         <button
           onClick={() => sliderRef.current.slickPrev()}
-          className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 transition-colors"
+          className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 transition-colors hidden lg:contents"
         >
           <FaChevronLeft />
         </button>
         <button
           onClick={() => sliderRef.current.slickNext()}
-          className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 transition-colors"
+          className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 transition-colors hidden lg:contents"
         >
           <FaChevronRight />
         </button>
 
-        {/* View All Button */}
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+        <button className="bg-white lg:bg-blue-500 lg:text-white px-4 py-2 rounded-lg lg:hover:bg-blue-600 transition-colors w-full lg:w-auto border-2 border-blue-500 lg:border-none">
           View All
         </button>
       </div>

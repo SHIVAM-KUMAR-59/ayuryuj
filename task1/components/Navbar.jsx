@@ -5,7 +5,7 @@ const Navbar = () => {
   const navLinks = ['Our Services', 'About Us', 'More']
 
   return (
-    <nav className=" lg:px-4 shadow-md flex items-center justify-center">
+    <nav className=" lg:px-4 shadow-md flex items-center justify-center overflow-x-hidden">
       <div className="flex w-[90%] mx-auto items-center justify-between">
         <Image
           src="/logo.svg"
