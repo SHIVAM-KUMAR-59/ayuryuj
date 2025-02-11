@@ -1,12 +1,23 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import Image from 'next/image'
+import { FiMenu } from 'react-icons/fi'
 
 const Navbar = () => {
-  const navLinks = ['Our Services', 'About Us', 'More']
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className=" lg:px-4 shadow-md flex items-center justify-center overflow-x-hidden">
-      <div className="flex w-[90%] mx-auto items-center justify-between">
+    <nav className="sticky top-0 left-0 w-full bg-white shadow-md z-50">
+      <div className="flex items-center justify-between w-[90%] mx-auto py-4">
+        {/* Hamburger Menu */}
+        <button
+          className="text-gray-700 text-2xl md:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <FiMenu />
+        </button>
+
+        {/* Logo */}
         <Image
           src="/logo.svg"
           height={50}
@@ -15,25 +26,31 @@ const Navbar = () => {
           className="cursor-pointer"
         />
 
-        <ul className="flex text-md font-medium items-center">
-          {navLinks.map((link, index) => (
-            <li
-              key={index}
-              className="cursor-pointer px-4 py-6 transition-all duration-300 border-b-2 border-transparent hover:bg-blue-100 hover:border-blue-500"
-            >
-              {link}
-            </li>
-          ))}
-          <li className="flex gap-3 ml-3">
-            <button className="px-4 py-2 border rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-300 bg-gradient-to-t from-red-400 to-orange-300 cursor-pointer text-md font-bold text-white">
-              Get Our App
-            </button>
-            <button className="px-4 py-2 border-2 border-orange-400 rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-orange-500 text-md font-bold">
-              Login/Signup
-            </button>
-          </li>
-        </ul>
+        {/* Buttons */}
+        <div className="flex gap-3">
+          <button className="px-4 py-2 border rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-300 bg-gradient-to-t from-red-400 to-orange-300 cursor-pointer text-md font-bold text-white">
+            Get Our App
+          </button>
+          <button className="hidden lg:block px-4 py-2 border-2 border-orange-400 rounded-xl hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-orange-500 text-md font-bold">
+            Login / Signup
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-white shadow-md w-full absolute top-full left-0 p-4 flex flex-col gap-3">
+          <a href="#" className="text-lg font-medium">
+            Our Services
+          </a>
+          <a href="#" className="text-lg font-medium">
+            About Us
+          </a>
+          <a href="#" className="text-lg font-medium">
+            More
+          </a>
+        </div>
+      )}
     </nav>
   )
 }
