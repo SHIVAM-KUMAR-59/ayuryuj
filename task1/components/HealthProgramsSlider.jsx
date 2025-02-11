@@ -168,7 +168,7 @@ const HealthProgramsSlider = () => {
         ))}
       </Slider>
 
-      <div className="items-center justify-end space-x-4  -mt-16 lg:mt-0 flex gap-3">
+      <div className="items-center justify-end space-x-4  -mt-16 lg:mt-3 flex gap-3">
         <div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden hidden lg:block">
           <div
             className="h-full bg-blue-500 transition-all duration-300"
