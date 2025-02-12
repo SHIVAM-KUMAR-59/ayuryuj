@@ -97,12 +97,13 @@ const Consult = () => {
   return (
     <>
       <section className="relative bg-cyan-100 rounded-3xl shadow-lg p-6 md:p-10 flex flex-col md:flex-row items-center justify-between w-[85%] mx-auto my-6">
+        {/* Left Section: Heading and Features */}
         <div className="flex flex-col gap-5 w-full md:w-2/3">
-          <h1 className="text-2xl md:text-4xl font-bold text-blue-900">
+          <h1 className="text-2xl md:text-4xl font-bold text-blue-900 text-center md:text-left">
             Consult India's Top Doctors Online
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 gap-4">
             <div className="flex items-center gap-3">
               <div className="bg-white p-3 rounded-full shadow-md">
                 <FaUserMd className="text-blue-500 text-xl" />
@@ -117,7 +118,8 @@ const Consult = () => {
               <p className="text-blue-900 font-medium">10L+ Satisfied Users</p>
             </div>
 
-            <div className="flex items-center gap-3">
+            {/* Hidden in mobile screens */}
+            <div className="hidden lg:flex items-center gap-3">
               <div className="bg-white p-3 rounded-full shadow-md">
                 <FaClock className="text-blue-500 text-xl" />
               </div>
@@ -126,7 +128,7 @@ const Consult = () => {
               </p>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-3">
               <div className="bg-white p-3 rounded-full shadow-md">
                 <MdFollowTheSigns className="text-blue-500 text-xl" />
               </div>
@@ -137,7 +139,7 @@ const Consult = () => {
           </div>
 
           {/* Tab Buttons */}
-          <div className="absolute -bottom-5 left-1/2 lg:translate-x-0 lg:left-5 transform -translate-x-1/2 flex w-[90%] sm:w-auto bg-white rounded-xl shadow-md">
+          <div className="absolute -bottom-5 left-1/2 lg:left-5 transform -translate-x-1/2 lg:translate-x-0 flex w-[90%] sm:w-auto bg-white rounded-xl shadow-md">
             <button
               className={`px-5 py-2 w-1/2 sm:w-auto rounded-l-xl shadow-md font-semibold transition-all duration-300 ${
                 selectedTab === 'symptoms'
@@ -161,16 +163,18 @@ const Consult = () => {
           </div>
         </div>
 
-        <div className="w-full md:w-1/3 flex justify-center items-end">
+        {/* Right Section: Image */}
+        <div className="w-full md:w-1/3 flex justify-center items-end mt-5 md:mt-0">
           <Image
             src="/consult.webp"
             alt="Doctors"
-            width={400}
-            height={300}
+            width={300}
+            height={200}
             className="rounded-xl object-cover"
           />
         </div>
       </section>
+
       <div className="w-[85%] mx-auto my-4 lg:my-12">
         <div className="text-blue-900 font-medium mt-8">
           <div className="flex sm:flex-wrap gap-5 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth scroll-snap-x">

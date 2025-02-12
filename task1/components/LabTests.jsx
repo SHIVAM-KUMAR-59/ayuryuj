@@ -12,81 +12,41 @@ const LabTests = () => {
 
   return (
     <>
-      <section className="relative bg-yellow-100 rounded-3xl shadow-lg p-6 md:p-10 flex flex-row items-center justify-between w-[85%] mx-auto my-6">
+      <section className="relative bg-gradient-to-r from-yellow-200 to-yellow-50 rounded-3xl shadow-lg p-6 md:p-10 flex items-center justify-between w-[85%] mx-auto my-6">
         {/* Left Section: Heading and Features */}
-        <div className="flex flex-col gap-5 w-1/2">
-          <h1 className="text-lg md:text-4xl font-bold text-yellow-900">
-            Book At-Home Lab Tests & Full Body Checks
+        <div className="flex flex-col gap-5 w-2/3 text-left">
+          <h1 className="text-lg md:text-3xl font-bold text-yellow-900 leading-snug">
+            Book At-Home Lab Tests & <br /> Full Body Checks
           </h1>
 
-          <div className="grid grid-cols-1 gap-4">
-            <div className="flex items-center gap-3">
-              <div className="bg-white p-3 rounded-full shadow-md">
+          <div className="flex gap-4">
+            <div className="flex items-center gap-2">
+              <div className="bg-white p-2 rounded-full shadow-md">
                 <FaMicroscope className="text-yellow-500 lg:text-xl" />
               </div>
-              <p className="text-yellow-900 font-medium">
-                NABL & CAP accredited labs
+              <p className="text-yellow-900 font-medium text-sm">
+                NABL & CAP <br /> accredited labs
               </p>
             </div>
 
-            <div className="flex items-center gap-3">
-              <div className="bg-white p-3 rounded-full shadow-md">
+            <div className="flex items-center gap-2">
+              <div className="bg-white p-2 rounded-full shadow-md">
                 <FaUsers className="text-yellow-500 lg:text-xl" />
               </div>
-              <p className="text-yellow-900 font-medium">5L+ Trusted Users</p>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="bg-white p-3 rounded-full shadow-md">
-                <FaClock className="text-yellow-500 text-xl" />
-              </div>
-              <p className="text-yellow-900 font-medium">
-                Smart reports in 12 hrs
+              <p className="text-yellow-900 font-medium text-sm">
+                5L+ Trusted <br /> Users
               </p>
             </div>
-
-            <div className="flex items-center gap-3">
-              <div className="bg-white p-3 rounded-full shadow-md">
-                <FaPercent className="text-yellow-500 text-xl" />
-              </div>
-              <p className="text-yellow-900 font-medium">
-                Flat 60% OFF on Health Checks
-              </p>
-            </div>
-          </div>
-
-          {/* Buttons for Health Checks */}
-          <div className="flex w-full bg-white rounded-xl shadow-md text-xs md:text-md lg:text-[18px] mt-4">
-            <button
-              className={`px-5 py-2 lg:py-3 w-1/2 font-semibold transition-all duration-300 ${
-                selectedTab === 'popular'
-                  ? 'bg-cyan-600 text-white'
-                  : 'text-yellow-600 border border-yellow-600'
-              }`}
-              onClick={() => setSelectedTab('popular')}
-            >
-              Popular Health Checks
-            </button>
-            <button
-              className={`px-5 py-2 lg:py-3 w-1/2 font-semibold transition-all duration-300 ${
-                selectedTab === 'prescribed'
-                  ? 'bg-cyan-600 text-white'
-                  : 'text-yellow-600 border border-yellow-600'
-              }`}
-              onClick={() => setSelectedTab('prescribed')}
-            >
-              Prescribed Lab Tests
-            </button>
           </div>
         </div>
 
         {/* Right Section: Image */}
-        <div className="w-1/2 flex justify-center flex-shrink-0">
+        <div className="w-1/3 flex justify-end">
           <Image
             src="/lab-test.webp"
             alt="Lab Tests"
-            width={400}
-            height={300}
+            width={180}
+            height={130}
             className="rounded-xl object-cover"
           />
         </div>
