@@ -71,7 +71,7 @@ const TrackerSlider = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 relative ">
+    <div className="max-w-[85%] mx-auto px-4 py-8 relative ">
       <Slider ref={sliderRef} {...settings}>
         {tracker.map((track) => (
           <TrackerCard track={track} key={track.id} />

@@ -12,16 +12,17 @@ const LabTests = () => {
 
   return (
     <>
-      <section className="relative bg-yellow-100 rounded-3xl shadow-lg p-6 md:p-10 flex flex-col md:flex-row items-center justify-between w-[85%] mx-auto my-6">
-        <div className="flex flex-col gap-5 w-full md:w-2/3">
-          <h1 className="text-2xl md:text-4xl font-bold text-yellow-900">
+      <section className="relative bg-yellow-100 rounded-3xl shadow-lg p-6 md:p-10 flex flex-row items-center justify-between w-[85%] mx-auto my-6">
+        {/* Left Section: Heading and Features */}
+        <div className="flex flex-col gap-5 w-1/2">
+          <h1 className="text-lg md:text-4xl font-bold text-yellow-900">
             Book At-Home Lab Tests & Full Body Checks
           </h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4">
             <div className="flex items-center gap-3">
               <div className="bg-white p-3 rounded-full shadow-md">
-                <FaMicroscope className="text-yellow-500 text-xl" />
+                <FaMicroscope className="text-yellow-500 lg:text-xl" />
               </div>
               <p className="text-yellow-900 font-medium">
                 NABL & CAP accredited labs
@@ -30,7 +31,7 @@ const LabTests = () => {
 
             <div className="flex items-center gap-3">
               <div className="bg-white p-3 rounded-full shadow-md">
-                <FaUsers className="text-yellow-500 text-xl" />
+                <FaUsers className="text-yellow-500 lg:text-xl" />
               </div>
               <p className="text-yellow-900 font-medium">5L+ Trusted Users</p>
             </div>
@@ -54,9 +55,10 @@ const LabTests = () => {
             </div>
           </div>
 
-          <div className="absolute -bottom-5 left-1/2 lg:translate-x-0 lg:left-5 transform -translate-x-1/2 flex w-[90%] sm:w-auto bg-white rounded-xl shadow-md text-xs md:text-md lg:text-[18px]">
+          {/* Buttons for Health Checks */}
+          <div className="flex w-full bg-white rounded-xl shadow-md text-xs md:text-md lg:text-[18px] mt-4">
             <button
-              className={`px-5 py-2 lg:py-3 w-1/2 sm:w-auto rounded-l-lg sm:rounded-l-xl  sm:rounded-tr-none font-semibold transition-all duration-300 ${
+              className={`px-5 py-2 lg:py-3 w-1/2 font-semibold transition-all duration-300 ${
                 selectedTab === 'popular'
                   ? 'bg-cyan-600 text-white'
                   : 'text-yellow-600 border border-yellow-600'
@@ -66,7 +68,7 @@ const LabTests = () => {
               Popular Health Checks
             </button>
             <button
-              className={`px-5 py-2 lg:py-3 w-1/2 rounded-r-lg sm:w-auto sm:rounded-r-xl  sm:rounded-bl-none font-semibold transition-all duration-300 ${
+              className={`px-5 py-2 lg:py-3 w-1/2 font-semibold transition-all duration-300 ${
                 selectedTab === 'prescribed'
                   ? 'bg-cyan-600 text-white'
                   : 'text-yellow-600 border border-yellow-600'
@@ -78,7 +80,8 @@ const LabTests = () => {
           </div>
         </div>
 
-        <div className="w-full md:w-1/3 flex justify-center items-end">
+        {/* Right Section: Image */}
+        <div className="w-1/2 flex justify-center flex-shrink-0">
           <Image
             src="/lab-test.webp"
             alt="Lab Tests"

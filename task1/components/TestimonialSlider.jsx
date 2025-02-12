@@ -72,25 +72,26 @@ const TestimonialSlider = () => {
 
   return (
     <div
-      className="relative max-w-7xl mx-auto px-4 py-8"
+      className="relative max-w-[85%] mx-auto px-4 py-8"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {/* Left Arrow */}
       {hovered && (
         <button
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-700 transition"
-          onClick={() => sliderRef.current?.slickPrev()}
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-700 transition z-10"
+          onClick={() => sliderRef.current && sliderRef.current.slickPrev()} // ✅ Corrected
         >
           <FaChevronLeft size={20} />
         </button>
       )}
 
       {/* Slider */}
-      <Slider {...settings} ref={(c) => sliderRef}>
+      <Slider {...settings} ref={sliderRef}>
         {testimonials.map((testimonial) => (
           <div key={testimonial.id} className="px-4">
-            <div className="p-6 bg-white rounded-xl shadow-lg border hover:shadow-2xl transition mb-5">
+            <div className="p-6 bg-white rounded-xl shadow-lg border hover:shadow-2xl transition mb-5 flex flex-col justify-between min-h-[250px]">
+              {/* Profile Section */}
               <div className="flex items-center space-x-4">
                 <img
                   src={testimonial.image}
@@ -104,6 +105,8 @@ const TestimonialSlider = () => {
                   </p>
                 </div>
               </div>
+
+              {/* Ratings */}
               <div className="flex items-center mt-2">
                 {Array.from({ length: 5 }, (_, i) =>
                   i < testimonial.rating ? (
@@ -113,7 +116,11 @@ const TestimonialSlider = () => {
                   ),
                 )}
               </div>
-              <p className="mt-3 text-gray-700 text-sm">{testimonial.review}</p>
+
+              {/* Review */}
+              <p className="mt-3 text-gray-700 text-sm line-clamp-3">
+                {testimonial.review}
+              </p>
             </div>
           </div>
         ))}
@@ -123,7 +130,7 @@ const TestimonialSlider = () => {
       {hovered && (
         <button
           className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-md hover:bg-gray-700 transition"
-          onClick={() => sliderRef.current?.slickPrev()}
+          onClick={() => sliderRef.current && sliderRef.current.slickNext()} // ✅ Corrected
         >
           <FaChevronRight size={20} />
         </button>

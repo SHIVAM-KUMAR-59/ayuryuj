@@ -112,7 +112,7 @@ const AssessmentSlider = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 relative ">
+    <div className="max-w-[85%] mx-auto px-4 py-8 relative ">
       <Slider ref={sliderRef} {...settings}>
         {assessments.map((assessment) => (
           <AssessmentCard assessment={assessment} key={assessment.id} />
